@@ -18,6 +18,10 @@ class IdeaService extends BaseService{
         return await _ideaRepository.getUserIdeas(author);
     }
 
+    async createIdea(idea, userId){
+        return await _ideaRepository.create({...idea, author: userId});
+    }
+
     async upvoteIdea(ideaId){
         if(!ideaId){
             const error = new Error();

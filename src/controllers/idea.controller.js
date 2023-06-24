@@ -21,7 +21,8 @@ class IdeaController{
 
     async create(req, res){
         const {body} = req;
-        const createdIdea = await _ideaService.create(body);
+        const {id: userId} = req.user;
+        const createdIdea = await _ideaService.createIdea(body, userId);
         return res.status(201).send(createdIdea);
     }
 
