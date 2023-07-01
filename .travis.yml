@@ -1,3 +1,8 @@
 language: node_js
 node_js:
   - stable
+deploy:
+  provider: heroku
+  app: shareyouridea
+  api_key:
+    secure: ad7641ee-3aef-4635-a887-69e18890c3a5
